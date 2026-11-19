@@ -5,75 +5,98 @@
 
 ## Overview
 
-This portfolio project demonstrates an Excel-based e-commerce sales reporting workflow using **500 synthetic transactions** from **July–September 2026**. It covers data validation, marketplace performance, monthly revenue, SKU analysis, and dashboard reporting.
+This project analyzes **500 synthetic e-commerce transactions** from Shopee and TikTok Shop covering **July–September 2026**. Using Microsoft Excel, the analysis combines data preparation, transaction validation, sales performance analysis, and dashboard reporting to evaluate marketplace performance, monthly revenue trends, and product-level sales.
 
-> **Dataset disclosure:** All transactions are simulated for educational and portfolio purposes. They are not actual Shopee or TikTok Shop sales.
+The goal is to demonstrate how structured sales reporting and data quality checks can support reliable performance monitoring and data-driven business decisions.
+
+## Executive Summary
+
+The analysis reports **Rp55,339,000 in net revenue** from **414 valid completed orders**, with an Average Order Value (AOV) of **Rp133,669**.
+
+Shopee contributes the largest share of net revenue at **Rp31,721,000 (57.3%)**, compared with TikTok Shop at **Rp23,618,000 (42.7%)**. September records the highest monthly revenue at **Rp22,055,000**.
+
+The validation process also identifies **7 flagged records**, highlighting the importance of transaction quality checks before reporting sales performance.
+
+All findings are based on synthetic data created for educational and portfolio purposes.
+
+---
 
 ## Business Objectives
 
-- Compare revenue and completed orders between Shopee and TikTok Shop.
-- Monitor net revenue, valid completed orders, and Average Order Value (AOV).
-- Analyze monthly sales trends and product/SKU contribution.
+- Compare net revenue and completed orders between Shopee and TikTok Shop.
+- Monitor sales KPIs, including net revenue, valid completed orders, and Average Order Value (AOV).
+- Analyze monthly sales trends and product-level performance.
 - Identify transaction records requiring validation before reporting.
+
+---
 
 ## Dataset
 
-The dataset contains order IDs, dates, marketplaces, SKUs, quantities, unit prices, discounts, and order statuses. A separate product master provides SKU, product name, category, and reference price.
+The dataset contains synthetic marketplace transactions, including order IDs, dates, marketplaces, SKUs, quantities, unit prices, discounts, and order statuses.
+
+A separate Product Master provides SKU references, product names, categories, and reference prices.
 
 | Attribute | Description |
 | --- | --- |
-| Reporting period | July–September 2026 |
-| Transaction count | 500 |
+| Reporting Period | July–September 2026 |
+| Total Transactions | 500 |
 | Marketplaces | Shopee and TikTok Shop |
-| Dataset type | Synthetic |
+| Dataset Type | Synthetic |
+| Main Dimensions | Date, Marketplace, SKU, Order Status |
+| Main Measures | Quantity, Unit Price, Discount, Net Revenue |
 
-## Excel Workbook Structure
+---
 
-| Worksheet | Purpose |
-| --- | --- |
-| README | Project overview and instructions |
-| Raw Sales Data | Original synthetic transactions |
-| Product Master | SKU and product reference data |
-| Data Cleaning | Product lookups, validation, and revenue eligibility |
-| Sales Analysis | Marketplace, monthly, and SKU-level summaries |
-| Dashboard | KPI summary and sales charts within Excel |
-| Insights | Business questions and analytical recommendations |
-
-## Methodology
+## Data Processing & Methodology
 
 ### 1. Data Preparation
 
-Organized raw marketplace transactions and maintained a separate product master for consistent SKU references.
+- Organized synthetic transactions across Shopee and TikTok Shop.
+- Structured order identifiers, SKUs, quantities, prices, discounts, and order statuses.
+- Maintained a Product Master for consistent product references.
 
-### 2. Data Cleaning and Validation
+### 2. Data Cleaning & Validation
 
-Used Excel functions such as **VLOOKUP**, **IF**, and **COUNTIF** to retrieve product information, flag repeated order IDs, and identify records requiring review. Only valid completed transactions contribute to eligible net revenue.
+- Used VLOOKUP to retrieve product information from the Product Master.
+- Applied Excel validation formulas to identify duplicate Order IDs and unmapped SKUs.
+- Separated cancelled and refunded transactions from completed orders.
+- Identified 7 flagged records requiring review.
+- Included only valid completed transactions in eligible net revenue calculations.
 
 ### 3. Sales Analysis
 
-Used **SUMIFS** and **COUNTIFS** to summarize revenue and order counts by marketplace and reporting month, alongside SKU-level sales performance.
+- Used SUMIFS and COUNTIFS to calculate marketplace revenue and completed order counts.
+- Calculated Average Order Value (AOV).
+- Compared monthly sales performance from July to September 2026.
+- Analyzed SKU-level revenue contribution and units sold.
 
 ### 4. Dashboard Reporting
 
-The workbook includes an Excel dashboard summarizing revenue, valid completed orders, AOV, flagged records, and marketplace performance. **Open the Excel workbook to view the dashboard; no image files are required.**
+- Developed an Excel dashboard to summarize sales KPIs.
+- Visualized marketplace performance and monthly revenue trends.
+- Presented sales results and transaction quality indicators for reporting.
 
-## Reported KPIs
+---
 
-| Metric | Workbook value |
+## Sales Performance
+
+### Key Performance Indicators
+
+| Metric | Value |
 | --- | ---: |
-| Total transactions | 500 |
-| Valid completed orders | 414 |
-| Net revenue | Rp55,339,000 |
+| Total Transactions | 500 |
+| Valid Completed Orders | 414 |
+| Net Revenue | Rp55,339,000 |
 | Average Order Value | Rp133,669 |
-| Flagged records | 7 |
+| Flagged Records | 7 |
 
 ### Marketplace Performance
 
-| Marketplace | Completed orders | Net revenue |
-| --- | ---: | ---: |
-| Shopee | 225 | Rp31,721,000 |
-| TikTok Shop | 189 | Rp23,618,000 |
-| **Total** | **414** | **Rp55,339,000** |
+| Marketplace | Valid Completed Orders | Net Revenue | Revenue Share |
+| --- | ---: | ---: | ---: |
+| Shopee | 225 | Rp31,721,000 | 57.3% |
+| TikTok Shop | 189 | Rp23,618,000 | 42.7% |
+| **Total** | **414** | **Rp55,339,000** | **100%** |
 
 ### Monthly Net Revenue
 
@@ -83,60 +106,124 @@ The workbook includes an Excel dashboard summarizing revenue, valid completed or
 | August 2026 | Rp8,509,000 | Rp7,278,000 | Rp15,787,000 |
 | September 2026 | Rp13,764,000 | Rp8,291,000 | Rp22,055,000 |
 
-*Figures are the reported workbook values and should be recalculated and verified in Microsoft Excel before formal use.*
+---
 
 ## Key Findings
 
-- Shopee contributes more reported eligible revenue and completed orders than TikTok Shop.
-- September records the highest net revenue of the three reporting months.
-- Seven records are flagged for further validation.
-- SKU-level summaries support identification of product revenue contribution.
+### 1. Marketplace Performance
+
+**Shopee generates higher net revenue and completed order volume than TikTok Shop.**
+
+Shopee contributes Rp31.72 million (57.3%) in net revenue across 225 valid completed orders, compared with TikTok Shop's Rp23.62 million (42.7%) across 189 orders.
+
+### 2. Order Status & Validation
+
+**Transaction validation reduces the number of orders eligible for revenue reporting.**
+
+Out of 500 transactions, 420 are marked Completed, 50 Cancelled, and 30 Refunded. After validation, 414 completed orders remain eligible for revenue reporting.
+
+Seven records are flagged for review.
+
+### 3. Product Performance
+
+**The Home category leads revenue contribution, while product performance differs by revenue and units sold.**
+
+Mini Diffuser generates Rp9.77 million, followed by Tumbler Stainless at Rp9.46 million. Serum Niacinamide leads unit volume with 86 units sold.
+
+### 4. Monthly Revenue Performance
+
+**September records the highest net revenue of the reporting period.**
+
+Net revenue reaches Rp22.06 million in September, compared with Rp17.50 million in July and Rp15.79 million in August.
+
+The increase is primarily reflected in Shopee's September sales performance.
+
+---
 
 ## Business Recommendations
 
-1. Monitor marketplace-level revenue and completed orders regularly.
-2. Review high-performing and underperforming SKUs for inventory and promotional planning.
-3. Track cancelled and refunded orders separately from eligible sales.
-4. Validate duplicate IDs, SKU references, and quantities before producing reports.
+### Marketplace Monitoring
 
-These are analytical recommendations, not measured business improvements.
+Monitor sales performance across Shopee and TikTok Shop to identify differences in revenue contribution, completed order volume, and Average Order Value.
 
-## Tools and Techniques
+### SKU Optimization
 
-**Microsoft Excel:** VLOOKUP, IF, COUNTIF, COUNTIFS, SUMIFS, data validation, sales reporting, and Excel dashboard.
+Review high-performing and underperforming SKUs to support inventory allocation and promotional planning, prioritizing products with strong revenue and unit sales performance.
+
+### Order Status Monitoring
+
+Track cancelled and refunded orders separately from valid completed transactions to improve sales reporting accuracy and identify potential operational issues.
+
+### Data Quality Improvement
+
+Implement consistent transaction validation checks to identify duplicate Order IDs, unmapped SKUs, and other data quality issues before generating reports.
+
+---
+
+## Tools & Technologies
+
+| Tool / Technique | Purpose |
+| --- | --- |
+| Microsoft Excel | Data processing, analysis, and reporting |
+| VLOOKUP | Product reference lookup |
+| IF & IFERROR | Conditional logic and error handling |
+| COUNTIF & COUNTIFS | Validation and transaction counting |
+| SUMIFS | Revenue aggregation |
+| Excel Charts | Sales performance visualization |
+| Excel Dashboard | KPI monitoring and reporting |
+
+---
+
+## Excel Workbook Structure
+
+| Worksheet | Purpose |
+| --- | --- |
+| README | Project overview and instructions |
+| Raw Sales Data | Original synthetic transactions |
+| Product Master | SKU and product reference data |
+| Data Cleaning | Product lookups and transaction validation |
+| Sales Analysis | Marketplace, monthly, and SKU-level summaries |
+| Dashboard | Sales KPI reporting and charts |
+| Insights | Business findings and recommendations |
+
+---
 
 ## Repository Structure
 
-```text
-E-Commerce-Sales-Performance-Analysis/
-├── README.md
-└── Ecommerce_Sales_Analysis_Portfolio.xlsx
-```
-
-The project **does not require an `images/` folder, screenshots, or exported dashboard pictures**.
+    E-Commerce-Sales-Performance-Analysis/
+    ├── README.md
+    └── Ecommerce_Sales_Analysis_Portfolio.xlsx
 
 ## How to Use
 
 1. Download the Excel workbook from this repository.
-2. Open it in Microsoft Excel.
-3. Read the `README` worksheet.
-4. Inspect `Raw Sales Data`, `Product Master`, and `Data Cleaning`.
-5. Explore `Sales Analysis`, `Dashboard`, and `Insights` for results.
+2. Open the workbook in Microsoft Excel.
+3. Review the README and Raw Sales Data worksheets.
+4. Explore the Product Master and Data Cleaning worksheets.
+5. Review Sales Analysis for marketplace, monthly, and SKU-level results.
+6. Open the Dashboard worksheet to view the Excel sales dashboard.
+7. Read the Insights worksheet for analytical findings and recommendations.
+
+---
 
 ## Limitations
 
-- Synthetic data, not actual marketplace transactions.
-- Three-month reporting period.
-- No shipping fees, commissions, advertising costs, or product costs.
-- Net revenue is not profit or official marketplace GMV.
-- Flagged transactions require further review.
+- The dataset contains synthetic transactions and does not represent actual marketplace sales.
+- The analysis covers only July–September 2026.
+- Shipping fees, commissions, advertising costs, and product costs are not included.
+- Net revenue should not be interpreted as profit or official marketplace GMV.
+- Flagged records require additional review.
+
+---
 
 ## Future Improvements
 
-- Power Query imports and automated cleaning.
-- Cancellation and refund trend analysis.
-- Profitability reporting using costs and marketplace fees.
-- Automated monthly reporting.
+- Automate data imports and cleaning using Power Query.
+- Develop Pivot Tables and slicers for more flexible reporting.
+- Expand cancellation and refund analysis.
+- Incorporate marketplace fees and product costs for profitability analysis.
+- Automate recurring sales performance reporting.
+
 
 ---
 
